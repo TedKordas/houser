@@ -1,0 +1,70 @@
+.landing{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.landing-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 58vw;
+    height: 100%;
+    background: white;
+}
+
+.home-logo{
+    height: 190px;
+    width: 165px;
+    margin-bottom: 50px;
+}
+
+.inputs{
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.inputs-span{
+    font-size: 20px;
+    margin-bottom: 3px;
+    margin-left: 30px;
+    font-weight: 700;
+}
+
+.login-input{
+    border: 1px solid #519872;
+    outline: none;
+    font-size: 25px;
+    
+}
+
+.login{
+    border: none;
+    width: 130px;
+    height: 40px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #000;
+    margin-right: 30px;
+    background-color: #8aea92;
+    font-family: Open Sans,sans-serif;
+    font-weight: 700;
+}
+
+.register{
+    border: none;
+    width: 130px;
+    height: 40px;
+    font-size: 14px;
+    cursor: pointer;
+    color: white;
+    margin-right: 30px;
+    background-color: #3b5249;
+    font-family: Open Sans,sans-serif;
+    font-weight: 700;
+}

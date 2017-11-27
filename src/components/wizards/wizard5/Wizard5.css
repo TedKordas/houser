@@ -1,0 +1,23 @@
+.wizard5{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rent{
+    font-weight: 700;
+}
+
+.complete{
+    font-size: 15px;
+    cursor: pointer;
+    color: #000;
+    text-decoration: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px 30px;
+    border-radius: 3px;
+    border: none;
+    background-color: #8aea92;
+    font-weight: 400;
+}

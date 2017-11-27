@@ -1,0 +1,43 @@
+.Nav-header {
+    background-color: #519872;
+    /* font-size: 16px; */
+    height: 75px;
+    width: 100vw;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.header-content{
+    width: 50vw;
+    min-width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left{
+    font-size: 30px;
+  }
+  .span-houser{
+    margin-left: 10px;
+    font-weight: 700;
+  }
+  .span-dashboard{
+    margin-left: 10px;  
+    font-weight: 300;
+  }
+  
+  .header-right{
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 700;
+  }
+
+  .logout{
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+    text-decoration: none;
+  }

@@ -1,0 +1,20 @@
+.wizard4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loan-span{
+    font-size: 20px;
+    margin-left: 15px;
+    font-weight: 700;
+}
+
+.loan-input{
+    border-radius: 2px;
+    font-size: 15px;
+    width: 70%;
+    font-weight: 400;
+    border: 1px solid #519872;
+    outline: none;
+}

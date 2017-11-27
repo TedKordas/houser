@@ -1,0 +1,103 @@
+.wizard2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.address-span{
+    font-size: 20px;
+    margin-left: 15px;
+    font-weight: 700;
+}
+
+.address-input{
+    border-radius: 2px;
+    font-size: 15px;
+    width: 70%;
+    font-weight: 400;
+    border: 1px solid #519872;
+    outline: none;
+}
+
+.city-state-container{
+    width: 70%;
+    margin-top: 20px;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.city-container{
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 50%;
+}
+
+.city-span{
+    font-size: 20px;
+    margin-left: 15px;
+    font-weight: 700;
+}
+
+.city-input{
+    border-radius: 2px;
+    font-size: 15px;
+    width: 70%;
+    font-weight: 400;
+    border: 1px solid #519872;
+    outline: none;
+}
+
+.state-container{
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 50%;
+}
+
+.state-span{
+    font-size: 20px;
+    margin-left: 15px;
+    font-weight: 700;
+}
+
+.state-input{
+    border-radius: 2px;
+    font-size: 15px;
+    width: 70%;
+    font-weight: 400;
+    border: 1px solid #519872;
+    outline: none;
+}
+
+.zip-container{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.zip-span{
+    font-size: 20px;
+    margin-left: 15px;
+    font-weight: 700;
+}
+
+.zip-input{
+    border-radius: 2px;
+    font-size: 15px;
+    width: 35%!important;
+    font-weight: 400;
+    border: 1px solid #519872;
+    outline: none;
+}
+
+.button-container{
+    margin-top: 50px;
+    display: -ms-flexbox;
+    display: flex;
+    width: 70%;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-right: none;
+}
