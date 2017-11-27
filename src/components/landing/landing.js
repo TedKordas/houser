@@ -21,10 +21,6 @@ class Landing extends Component {
     this.loginUser = this.loginUser.bind(this);
   }
 
-  componentDidMount(){
-    console.log('did mount landing',this.props.user.length)
-  }
-
 
   handleLoginChange(val, prop) {
     this.setState({
@@ -34,18 +30,9 @@ class Landing extends Component {
   }
 
   registerUser() {
-    this.props.user.length ? this.props.login(this.state.username).then(res => {
-      if(this.props.user[0].username === this.state.username) {
-        alert('username already taken')
-      }
-      else{
-        this.props.createUser(this.state.username, this.state.password).then( res => {
-          this.props.history.push('/dashboard')
-        })
-      }
-    }): null
-
-    
+    this.props.createUser(this.state.username, this.state.password).then( res => {
+      this.props.history.push('/dashboard')
+    })
   }
 
   loginUser() {
