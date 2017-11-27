@@ -5,6 +5,8 @@ import active from '../../../assets/step_active.png';
 import inActive from '../../../assets/step_inactive.png';
 import complete from '../../../assets/step_completed.png';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+// import { wizard3_input } from './../../../ducks/reducer';
 
 class Wizard3 extends Component {
     constructor(props){
@@ -15,6 +17,10 @@ class Wizard3 extends Component {
         }
 
         this.handleImgChange = this.handleImgChange.bind(this)
+    }
+
+    componentDidMount(){
+        console.log(this.props)
     }
 
     handleImgChange(val){
@@ -37,18 +43,18 @@ class Wizard3 extends Component {
             <div className='step-container'>
                 <span className='step'>Step 3</span>
                 <div className='step-img-container'>
-                    <img src={complete}/>
-                    <img src={complete}/>
-                    <img src={active}/>
-                    <img src={inActive}/>
-                    <img src={inActive}/>
+                    <img src={complete} alt="#"/>
+                    <img src={complete} alt="#"/>
+                    <img src={active} alt="#"/>
+                    <img src={inActive} alt="#"/>
+                    <img src={inActive} alt="#"/>
                 </div>
 
             </div>
             <div class='step-info-container'>
                 
                 <div className='img-container'>
-                        <img src={this.state.img} alt='Preview'/>
+                        <img style={{maxWidth: '100%', maxHeight: '300px'}} src={this.state.img} alt='Preview'/>
                 </div>
 
                 <div style={{width: '70%'}}><span className='img-span'>Image URL</span></div>
@@ -66,4 +72,11 @@ class Wizard3 extends Component {
   }
 }
 
-export default Wizard3;
+function mapStatetoProps(state) {
+    return {
+        user: state.user,
+        property: state
+    }
+}
+
+export default connect(mapStatetoProps, {})(Wizard3);

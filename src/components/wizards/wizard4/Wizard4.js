@@ -19,11 +19,11 @@ class Wizard4 extends Component {
             <div className='step-container'>
                 <span className='step'>Step 4</span>
                 <div className='step-img-container'>
-                    <img src={complete}/>
-                    <img src={complete}/>
-                    <img src={complete}/>
-                    <img src={active}/>
-                    <img src={inActive}/>
+                    <img src={complete} alt="#"/>
+                    <img src={complete} alt="#"/>
+                    <img src={complete} alt="#"/>
+                    <img src={active} alt="#"/>
+                    <img src={inActive} alt="#"/>
                 </div>
             </div>
             <div class='step-info-container'>

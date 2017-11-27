@@ -12,8 +12,8 @@ class Dashboard extends Component {
   }
 
   componentDidMount(){
-    console.log('dashboard did mount',this.props.user[0])
-    if(!this.props.user[0]){
+    console.log('dashboard did mount',this.props)
+    if(!this.props.user.length){
       this.props.history.push('/')
       alert('please log in')
     } 
@@ -54,6 +54,8 @@ class Dashboard extends Component {
 function mapStatetoProps(state) {
   return {
     user: state.user,
+    property: state
+    
   }
 }
 

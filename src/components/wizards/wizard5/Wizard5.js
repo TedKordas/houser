@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './Wizard5.css';
 import Nav from '../../nav/Nav.js';
 import active from '../../../assets/step_active.png';
-import inActive from '../../../assets/step_inactive.png';
 import complete from '../../../assets/step_completed.png';
 import { Link } from 'react-router-dom';
 
@@ -19,11 +18,11 @@ class Wizard5 extends Component {
             <div className='step-container'>
                 <span className='step'>Step 5</span>
                 <div className='step-img-container'>
-                    <img src={complete}/>
-                    <img src={complete}/>
-                    <img src={complete}/>
-                    <img src={complete}/>
-                    <img src={active}/>
+                    <img src={complete} alt="#"/>
+                    <img src={complete} alt="#"/>
+                    <img src={complete} alt="#"/>
+                    <img src={complete} alt="#"/>
+                    <img src={active} alt="#"/>
                 </div>
             </div>
             <div class='step-info-container'>

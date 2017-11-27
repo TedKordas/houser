@@ -10,7 +10,7 @@ class Nav extends Component {
         <header className="Nav-header">
           <div className='header-content'>
             <div className='header-left'>
-              <img src={logo} />
+              <img src={logo} alt='logo'/>
               <span className='span-houser'>Houser</span>
               <span className='span-dashboard'>Dashboard</span>
             </div>

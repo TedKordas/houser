@@ -3,7 +3,7 @@ import './landing.css'
 import HomeLogo from '../../assets/auth_logo.png'
 import { connect } from 'react-redux';
 import { createUser, login } from './../../ducks/reducer';
-import axios from 'axios';
+// import axios from 'axios';
 
 
 
@@ -30,17 +30,27 @@ class Landing extends Component {
   }
 
   registerUser() {
-    this.props.createUser(this.state.username, this.state.password).then( res => {
-      this.props.history.push('/dashboard')
+    this.props.login(this.state.username).then(res => {
+        if(res.value.length){
+          alert('username taken')
+        }
+        else{
+          this.props.createUser(this.state.username, this.state.password).then( res => {
+            this.props.history.push('/dashboard')
+          })
+        }
     })
+
+
+    
   }
 
   loginUser() {
     this.props.login(this.state.username).then(res => {
-      if(this.props.user[0].username === this.state.username && this.props.user[0].password === this.state.password) {
+      if (this.props.user[0].username === this.state.username && this.props.user[0].password === this.state.password) {
         this.props.history.push('/dashboard')
       }
-      else{
+      else {
         alert('invalid login')
       }
     })
@@ -51,7 +61,7 @@ class Landing extends Component {
     return (
       <div className="landing">
         <div className='landing-content'>
-          <img className='home-logo' src={HomeLogo} />
+          <img className='home-logo' src={HomeLogo} alt='Logo'/>
 
           <div className='inputs'>
             <span className='inputs-span'>Username</span>
