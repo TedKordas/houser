@@ -6,7 +6,7 @@ import inActive from '../../../assets/step_inactive.png';
 import complete from '../../../assets/step_completed.png';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-// import { wizard3_input } from './../../../ducks/reducer';
+import { wizard3_input } from './../../../ducks/reducer';
 
 class Wizard3 extends Component {
     constructor(props){
@@ -16,7 +16,8 @@ class Wizard3 extends Component {
             img: ''
         }
 
-        this.handleImgChange = this.handleImgChange.bind(this)
+        this.handleImgChange = this.handleImgChange.bind(this);
+        this.handleNext = this.handleNext.bind(this);
     }
 
     componentDidMount(){
@@ -28,6 +29,11 @@ class Wizard3 extends Component {
             img: val
         })
         console.log(this.state)
+    }
+
+    handleNext() {
+        console.log('handle next wiz3')
+        this.props.wizard3_input(this.state)
     }
 
 
@@ -61,8 +67,8 @@ class Wizard3 extends Component {
                 <input className='img-input' onChange={(e) => this.handleImgChange(e.target.value)}></input>
                                  
                 <div className='button-container'>
-                    <Link to='wizard2'><button className='next'>Previous Step</button></Link>
-                    <Link to='wizard4'><button className='next'>Next Step</button></Link>
+                    <Link to='/wizard2'><button className='next'>Previous Step</button></Link>
+                    <Link to='/wizard4'><button className='next' onClick={() => this.handleNext()}>Next Step</button></Link>
                 </div>
             </div>
 
@@ -79,4 +85,4 @@ function mapStatetoProps(state) {
     }
 }
 
-export default connect(mapStatetoProps, {})(Wizard3);
+export default connect(mapStatetoProps, {wizard3_input})(Wizard3);

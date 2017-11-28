@@ -25,7 +25,7 @@ class Wizard2 extends Component {
     }
 
     componentDidMount(){
-        console.log(this.props)
+        console.log(this.props.property.address)
     }
 
     handleChange(prop, val){
@@ -66,7 +66,7 @@ class Wizard2 extends Component {
                 <div className='city-state-container'>
                     <div className='city-container'>
                         <span className='city-span'>City</span>
-                        <input className='city-input' onChange={(e) => this.handleChange('city', e.target.value)}></input>
+                        <input className='city-input' value={this.state.city} onChange={(e) => this.handleChange('city', e.target.value)}></input>
                     </div>
                     <div className='state-container'>
                         <span className='state-span'>State</span>
@@ -78,8 +78,8 @@ class Wizard2 extends Component {
                 </div>
                                  
             <div className='button-container'>
-                <Link to='wizard1'><button className='next'>Previous Step</button></Link>
-                <Link to='wizard3'><button className='next' onClick={() => this.handleNext()}>Next Step</button></Link>
+                <Link to='/wizard1'><button className='next'>Previous Step</button></Link>
+                <Link to='/wizard3'><button className='next' onClick={() => this.handleNext()}>Next Step</button></Link>
             </div>
             </div>
 

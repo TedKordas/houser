@@ -46,7 +46,7 @@ class Wizard1 extends Component {
                 <div className='content'>
                     <div className='listing-header'>
                         <span className='header-span'>Add new listing</span>
-                        <Link to='dashboard'><button className='cancel'>Cancel</button></Link>
+                        <Link to='/dashboard'><button className='cancel'>Cancel</button></Link>
                     </div>
                     <div className='step-container'>
                         <span className='step'>Step 1</span>
