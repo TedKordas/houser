@@ -26,7 +26,7 @@ class Wizard5 extends Component {
 
     componentWillReceiveProps(newProps){
         console.log('new props',newProps.property)
-        axios.post('http://localhost:3005/api/post/property', newProps.property).then(res => {
+        axios.post('/api/post/property', newProps.property).then(res => {
             this.props.history.push('/dashboard')
         })
     }

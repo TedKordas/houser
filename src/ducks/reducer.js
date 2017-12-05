@@ -30,7 +30,7 @@ const WIZARD5 = 'WIZARD5';
 
 export function getProperties(id) {
     console.log('get props with user id', id)
-    const properties = axios.get(`http://localhost:3005/api/get/properties/${id}`)
+    const properties = axios.get(`/api/get/properties/${id}`)
         .then(res => {
             console.log('get properties res', res)
             return res.data
@@ -100,7 +100,7 @@ export function wizard1_input(wiz1_state) {
 
 export function login(username) {
     console.log('redux login username', username)
-    const setUser = axios.get(`http://localhost:3005/api/get/user/${username}`)
+    const setUser = axios.get(`/api/get/user/${username}`)
         .then(res => {
             console.log('login redux result', res)
             return res.data
@@ -115,7 +115,7 @@ export function login(username) {
 
 export function createUser(username, password) {
     console.log('user got to reducer', username, password)
-    const newUser = axios.post('http://localhost:3005/api/post/user', { username, password })
+    const newUser = axios.post('/api/post/user', { username, password })
         .then(res => {
             console.log('res', res)
             return res.data
