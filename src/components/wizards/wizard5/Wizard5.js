@@ -5,7 +5,8 @@ import active from '../../../assets/step_active.png';
 import complete from '../../../assets/step_completed.png';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { wizard5_input, postProperty } from './../../../ducks/reducer';
+import { wizard5_input } from './../../../ducks/reducer';
+import axios from 'axios'
 
 class Wizard5 extends Component {
     constructor(props){
@@ -23,6 +24,13 @@ class Wizard5 extends Component {
         console.log(this.props.property)
     }
 
+    componentWillReceiveProps(newProps){
+        console.log('new props',newProps.property)
+        axios.post('http://localhost:3005/api/post/property', newProps.property).then(res => {
+            this.props.history.push('/dashboard')
+        })
+    }
+
     handleChange(val){
         this.setState({
             desiredRent: val
@@ -31,8 +39,7 @@ class Wizard5 extends Component {
     }
 
     handleComplete(){
-        this.props.wizard5_input(this.state)
-        this.props.postProperty()
+        this.props.wizard5_input(this.state)  
     }
 
   render() {
@@ -54,7 +61,7 @@ class Wizard5 extends Component {
                     <img src={active} alt="#"/>
                 </div>
             </div>
-            <div class='step-info-container'>
+            <div className='step-info-container'>
 
                 <span className='rent'>Recomended Rent</span>
 
@@ -63,7 +70,7 @@ class Wizard5 extends Component {
                
                 <div className='button-container'>
                     <Link to='/wizard4'><button className='next'>Previous Step</button></Link>
-                    <Link to='/dashboard' onClick={() => this.handleComplete()}><button className='complete'>complete</button></Link>
+                    <button className='complete' onClick={() => this.handleComplete()}>complete</button>
                 </div>
             </div>
 
@@ -80,4 +87,4 @@ function mapStatetoProps(state) {
     }
 }
 
-export default connect(mapStatetoProps, {wizard5_input, postProperty})(Wizard5);
+export default connect(mapStatetoProps, {wizard5_input})(Wizard5);

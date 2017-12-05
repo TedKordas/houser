@@ -3,20 +3,35 @@ import './dashboard.css';
 import Nav from '../nav/Nav.js';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
-import {  } from './../../ducks/reducer';
+import { getProperties } from './../../ducks/reducer';
 
 class Dashboard extends Component {
   constructor(props) {
     super(props)
-
+    this.state = {
+      properties: []
+    }
   }
 
-  componentDidMount(){
-    console.log('dashboard did mount',this.props)
-    if(!this.props.user.length){
+  componentDidMount() {
+    console.log('dashboard did mount', this.props)
+    if (!this.props.user.length) {
       this.props.history.push('/')
       alert('please log in')
-    } 
+    }
+    else {
+      this.props.getProperties(this.props.user[0].id).then(res => {
+        console.log('getprops res', res)
+        this.setState({
+          properties: res.value
+        })
+        console.log('state after getting props', this.state)
+      })
+    }
+  }
+
+  componentWillReceiveProps(newProps) {
+    console.log('newprops', newProps)
   }
 
   render() {
@@ -38,11 +53,29 @@ class Dashboard extends Component {
 
           <div className='home-listings'>
             <span className='listings-span'>Home Listings</span>
-            <div className='homes'>
-              <div className='homes-img'></div>
-              <div className='homes-message'></div>
-              <div className='homes-info'></div>
+            {this.state.properties.map((val, id, arr) => {
+              console.log(val)
+              return <div className='homes' key={id}>
+              <div className='homes-img'><img
+                style={{maxWidth: '150px', maxHeight: '150px'}}
+                src={val.img} alt='' />
+              </div>
+              <div className='homes-message'>
+                <span className='messag-prop-name'>{val.prop_name}</span>
+                <span className='message'>{val.prop_desc}j</span>
+              </div>
+              <div className='homes-info'>
+                <span className='info-span'>Loan: ${val.loan_amount}</span>
+                <span className='info-span'>Monthly Mortgage: ${val.monthly_mortgage}</span>
+                <span className='info-span'>Recommended Rent: $123</span>
+                <span className='info-span'>Desired Rent: ${val.desired_rent}</span>
+                <span className='info-span'>Address: {val.address}</span>
+                <span className='info-span'>City: {val.city}</span>
+                <span className='info-span'>State: {val.state}</span>
+                <span className='info-span'>Zip: {val.zip}</span>
+              </div>
             </div>
+            })}
           </div>
 
         </div>
@@ -55,8 +88,8 @@ function mapStatetoProps(state) {
   return {
     user: state.user,
     property: state
-    
+
   }
 }
 
-export default connect(mapStatetoProps, {  })(Dashboard);
+export default connect(mapStatetoProps, { getProperties })(Dashboard);

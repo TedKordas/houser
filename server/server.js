@@ -4,10 +4,8 @@ const express = require('express'),
     bodyParser = require('body-parser'),
     massive = require('massive'),
     cors = require('cors'),
-    controller = require('./controller.js')
-    propController = require('./propController.js');
-
-const PORT = 3005;
+    controller = require('./controller.js');
+const PORT = 2455;
 const app = express();
 
 
@@ -27,6 +25,8 @@ massive(process.env.CONNECTION_STRING).then(db => {
 
 app.post('/api/post/user', controller.createUser)
 app.get('/api/get/user/:username', controller.getUser)
+app.post('/api/post/property', controller.postProp)
+app.get('/api/get/properties/:id', controller.getProps)
 
 
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`))
