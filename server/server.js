@@ -8,6 +8,7 @@ const express = require('express'),
 const PORT = 2455;
 const app = express();
 
+app.use( express.static( `${__dirname}/../build` ) );
 
 app.use(cors())
 app.use(bodyParser.json());
