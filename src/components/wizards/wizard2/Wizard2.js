@@ -78,7 +78,7 @@ class Wizard2 extends Component {
                 </div>
                                  
             <div className='button-container'>
-                <Link to='/wizard1'><button className='next'>Previous Step</button></Link>
+                <Link to='/wizard/:1'><button className='next'>Previous Step</button></Link>
                 <Link to='/wizard3'><button className='next' onClick={() => this.handleNext()}>Next Step</button></Link>
             </div>
             </div>

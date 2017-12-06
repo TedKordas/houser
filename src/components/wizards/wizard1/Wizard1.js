@@ -40,6 +40,7 @@ class Wizard1 extends Component {
 
     render() {
         console.log(this.state)
+        console.log(this.props.match)
         return (
             <div className="wizard1">
                 <Nav />

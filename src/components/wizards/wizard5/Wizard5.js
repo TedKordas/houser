@@ -13,6 +13,7 @@ class Wizard5 extends Component {
         super(props)
 
         this.state = {
+                recomended: '',
                 desiredRent: ''
         }
 
@@ -21,7 +22,12 @@ class Wizard5 extends Component {
     }
 
     componentDidMount(){
-        console.log(this.props.property)
+        let start = this.props.property.monthlyMortgage
+        let add = start*.25;
+        let result =+ start+add
+        this.setState({
+            recomended: result
+        })
     }
 
     componentWillReceiveProps(newProps){
@@ -63,7 +69,7 @@ class Wizard5 extends Component {
             </div>
             <div className='step-info-container'>
 
-                <span className='rent'>Recomended Rent</span>
+                <span className='rent'>Recomended Rent ${this.state.recomended}</span>
 
                 <div style={{width: '70%', margin:'20px 0 0 0'}}><span className='loan-span'>Desired Rent</span></div>
                 <input className='loan-input' onChange={(e) => this.handleChange(e.target.value)}></input>   

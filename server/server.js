@@ -28,6 +28,7 @@ app.post('/api/post/user', controller.createUser)
 app.get('/api/get/user/:username', controller.getUser)
 app.post('/api/post/property', controller.postProp)
 app.get('/api/get/properties/:id', controller.getProps)
+app.get('/api/get/filter/:number', controller.getFilter)
 
 
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`))

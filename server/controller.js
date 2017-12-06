@@ -29,9 +29,9 @@ module.exports = {
         console.log('post property fired')
         const dbInstance = req.app.get('db')
         const userId = req.body.user[0].id
-        const { name, desc, imgUrl, address, city, state, zip, loanAmount, monthlyMortgage, desiredRent } = req.body
+        const { name, desc, imgUrl, address, city, state, zip, loanAmount, monthlyMortgage, desiredRent, recomended } = req.body
 
-        dbInstance.post_prop([userId, name, desc, address, city, state, zip, imgUrl, loanAmount, monthlyMortgage, desiredRent])
+        dbInstance.post_prop([userId, name, desc, address, city, state, zip, imgUrl, loanAmount, monthlyMortgage, desiredRent, recomended])
         .then((property) => {
             return res.status(200).send(property)
         })
@@ -49,5 +49,20 @@ module.exports = {
         })
         .catch((err) => res.status(500).send(err))
     },
+
+    getFilter: (req, res, next) => {
+        console.log('get filter fired')
+        const dbInstance = req.app.get('db')
+        const {number} = req.params
+        console.log(+number)
+
+        dbInstance.get_filter_properties([+number])
+        .then((properties) => {
+            return res.status(200).send(properties)
+        })
+        .catch((err) => res.status(500).send(err))
+    },
+
+    
     
 }

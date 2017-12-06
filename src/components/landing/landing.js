@@ -58,6 +58,7 @@ class Landing extends Component {
 
 
   render() {
+    console.log(this.props.match)
     return (
       <div className="landing">
         <div className='landing-content'>
@@ -70,7 +71,7 @@ class Landing extends Component {
 
           <div className='inputs'>
             <span className='inputs-span'>Password</span>
-            <input className='login-input' onChange={(e) => this.handleLoginChange(e.target.value, 'password')}></input>
+            <input className='login-input' type='password' onChange={(e) => this.handleLoginChange(e.target.value, 'password')}></input>
           </div>
 
 
