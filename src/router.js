@@ -12,12 +12,12 @@ export default (
     <div>
         <Switch>
             <Route component={Landing} exact path='/' />
-            <Route component={Dashboard} exact path='/dashboard' />
-            <Route component={Wizard1} exact path='/wizard1' />
-            <Route component={Wizard2} exact path='/wizard2' />
-            <Route component={Wizard3} exact path='/wizard3' />
-            <Route component={Wizard4} exact path='/wizard4' />
-            <Route component={Wizard5} exact path='/wizard5' />
+            <Route component={Dashboard} path='/dashboard' />
+            <Route component={Wizard1} path='/wizard/:1' />
+            <Route component={Wizard2} path='/wizard2' />
+            <Route component={Wizard3} path='/wizard3' />
+            <Route component={Wizard4} path='/wizard4' />
+            <Route component={Wizard5} path='/wizard5' />
 
         </Switch>
     </div>

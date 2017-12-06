@@ -13,6 +13,7 @@ let initialState = {
     loanAmount: "",
     monthlyMortgage: "",
     desiredRent: "",
+    recomended: 0,
     properties: []
 };
 
@@ -45,7 +46,10 @@ export function wizard5_input(state) {
     console.log('redux wizard5 inputs', state)
     return {
         type: WIZARD5,
-        payload: state.desiredRent
+        payload: {
+            desiredRent: state.desiredRent,
+            recomended: state.recomended
+        }
     }
 }
 
@@ -147,7 +151,7 @@ export default function (state = initialState, action) {
         case WIZARD4:
             return Object.assign({}, state, { loanAmount: action.payload.loanAmount, monthlyMortgage: action.payload.monthlyMortgage })
         case WIZARD5:
-            return Object.assign({}, state, { desiredRent: action.payload })
+            return Object.assign({}, state, { desiredRent: action.payload.desiredRent, recomended: action.payload.recomended })
         case GET_PROPERTIES:
             return Object.assign({}, state, { properties: action.payload })
 
